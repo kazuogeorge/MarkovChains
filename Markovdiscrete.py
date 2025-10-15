@@ -1,8 +1,8 @@
 import random
 import time
 focus = 0
-peeps = int(input("how many people are playing? ")) #User inputs the amount of people
-num = int(input("how many rounds? ")) #User inputs the amount of people
+peeps = int(input("how many people are playing? ")) #User inputs the number of people
+num = int(input("how many rounds? ")) #User inputs the amount of rounds
 countl = [0]*peeps #Create string to count the amount of times the focus was on each person
 stime = time.perf_counter() #records the time before the start of the iterations
 for x in range(0,num): #repeat for the specified number of rounds
