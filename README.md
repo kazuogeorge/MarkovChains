@@ -69,3 +69,4 @@ how many iterations? 1000000
 runtime: 2.2199329070281237
 [0.4444444444444445, 0.33333333333333337, 0.22222222222222227]
 ```
+While this has about 3 times the runtime of the first program, it also has 5 times the amount of accurate digits. To fully quantify the difference the new program makes, I graphed both's convergence vs. time for intervals of 50,000 iterations
