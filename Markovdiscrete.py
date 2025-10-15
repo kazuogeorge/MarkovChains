@@ -12,6 +12,6 @@ for x in range(0,num): #repeat for the specified number of rounds
         focus = random.randint(0,a-1) #The person chooses a random person with a lower number than them
     countl[focus] += 1 #Adds one at the index on the counting list
 for x in range(0,len(countl)):  #Normalizes the count of each index so it represnted as a percent/100
-    countl[x-1] /= (.01*num)
+    countl[x] /= (.01*num)
 print("runtime: "+str(time.perf_counter() - stime)) #prints the time that it took to iterate
 print(countl) # prints the output
