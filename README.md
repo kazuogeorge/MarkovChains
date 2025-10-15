@@ -13,24 +13,32 @@ Interesting thing to note here: you can only move up in the game if the person i
 
 Which got me thinking "How would I go about calculating the chance of each person having the focus, provided they play optimally?"
 (Small side note here: in optimal play, the person at the number 1 spot can choose whoever they want, because they don't need to move up)
-I had been looking for an excuse to use the basic Python I had been learning in class, so I wrote myself a basic program.
+What I thought I needed first was a database of some of the simpler distributions. I had been looking for an excuse to use the basic Python I had been learning in class, so I wrote myself a basic program.
 ```python
 import random
+import time
 focus = 0
 peeps = int(input("how many people are playing? ")) 
-num = int(input("how many rounds? ")) 
+num = int(input("how many rounds? "))
 countl = [0]*peeps 
+stime = time.perf_counter()
 for x in range(0,num):
     if focus == 0:
         focus = random.randint(1,peeps-1)
     else:
-        focus = random.randint(0,a-1) 
-    countl[focus] += 1 
-for x in range(0,len(countl)): 
+        focus = random.randint(0,a-1)
+    countl[focus] += 1
+for x in range(0,len(countl)):
     countl[x-1] /= (.01*num)
+print("runtime: "+str(time.perf_counter() - stime))
 print(countl) 
 ```
 Using the law of large numbers, the more iterations through this program, the more accurate the output of percent chances. With this first program, I generated some basic, rough estimates of the chance distrubutions like:
 ```python
-
+how many people are playing? 3
+how many rounds? 1000000
+runtime: 0.8723384190234356
+[44.4515, 33.3222, 22.2263]
 ```
+Able to rip through a million iterations in less than a second seems nice, but later it's easy to look back and see just how slow this program would have been to run to get an accurate database of distributions.
+Thankfully I already had an idea of how to 
